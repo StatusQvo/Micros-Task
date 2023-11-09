@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="task, test, task test">
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" href="img/fav-icon.ico">
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Portfolio Test Task</title>
   </head>
   <body>
 
-     <!-- HEADER BAR -->
-<header class="common-margin">
+ <div class="container">
+
+    <!-- HEADER BAR -->
+<header>
     
   <nav class="navbar row-container">
       <div>
         <img src="img/navbar-logo.png" alt="logo">
       </div>
+      <div class="logo-space"></div>
       
       <div class="navbar__menu-items menu-items">
         <div><a href="#anchor-work">WORK</a></div>
@@ -28,13 +32,17 @@
 
 </header>
 
-    <!-- MAIN-->
-<main class="common-margin">
+
+    
+<!-- MAIN-->
+<main>
    
     <!-- Hello section-->   
   <section class="hello-section">
+    
     <article class="row-container">
-      
+
+     
       <div class="hello__article article__list">
         <span class="hello__header">
             <b> Hello!!! <br>
@@ -42,20 +50,18 @@
                 Digital Agency.</b>
         </span>
         <span class="s-text-item">
-            Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut <br>
-            labore et dolore magna aliqua.</span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
       
         <div class="hello__button">
         <button class="standart-button" role="button">SEND MESSAGE</button>
         </div>
-      
       </div>
 
       <div class="hello__article-img1">
-        <img src="img/header-img1.png" alt="home image">
+        <img src="/img/header-img1.png" alt="Header Picture">
       </div>
+
     </article>
   
   </section>
@@ -74,11 +80,16 @@
         <div><a>ILLUSTRATION</a></div>
         <div><a>WEB</a></div>
       </div>
+      
+      <div class="space-work-bar"></div>
 
       <div class="work-filter-item">
         <span >NEWEST FIRST</span>
         <img src="img/work-arrow.png">
       </div>
+
+      
+
     </nav>
     
     <article class = "work-pictures row-container">
@@ -110,8 +121,9 @@
         </div>
       </div>
     </article>
-
-      <div class="menu__text fonts">
+     
+    
+  <div class="work-container__button menu__text fonts">
       <button class="work__button standart-button" role="button">SHOW ME MORE</button>
       </div>
             
@@ -142,8 +154,8 @@
     </div>
 
     
-     <article class="row-container">
-      <div class="row-container">
+     <article class="about__container">
+      <div class="about-pic-container">
         <div class="about__img1 about__img_common">
           <div></div>
         </div>
@@ -155,9 +167,8 @@
 
       <div class="about__info-container article__list">
         <span class="about__info-header">Little About Us</span>
-        <span>Lorem ipsum dolor sit amet, consectetur <br>
-          adipiscing elit, sed do eiusmod temp<br>
-          orincididunt ut labore et dolore magna <br>aliqua.</span>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod temp orincididunt ut labore et dolore magna aliqua.</span>
         <a href="#anchor-about">Read More</a>
         </div>
       </article>
@@ -174,12 +185,12 @@
     <span class="common__subheader">
       Lorem ipsum dolor sit amet, 
       consectetur adipiscing elit, 
-      sed do eiusmod tempor incididunt <br> 
+      sed do eiusmod tempor incididunt 
       ut labore et dolore magna aliqua.
     </span>
   </div>
 
-  <div class="row-container">
+  <div class="blog__container row-container">
     
     <div class="article__list">
       <div class="blog__container-img" style="background-image: url('img/blog-img1.png');">
@@ -190,7 +201,7 @@
       <div class="blog__info-container article__list">
         <span class="blog__info-header">SUPER BLOG ARTICLE!</span>
         <span>Lorem ipsum dolor sit amet, 
-          consectetur undo thes<br> tabore et dolore magna aliqua.</span>
+          consectetur undo thes tabore et dolore magna aliqua.</span>
         <span class="s-text-item">20 May 2020</span>
       </div>
     </div> 
@@ -204,7 +215,7 @@
       <div class="blog__info-container article__list">
         <span class="blog__info-header">SUPER BLOG ARTICLE!</span>
         <span>Lorem ipsum dolor sit amet, 
-          consectetur undo thes<br> tabore et dolore magna aliqua.</span>
+          consectetur undo thes tabore et dolore magna aliqua.</span>
         <span class="s-text-item">20 May 2020</span>
       </div>
     </div>
@@ -217,7 +228,7 @@
       <div class="blog__info-container article__list">
         <span class="blog__info-header">SUPER BLOG ARTICLE!</span>
         <span>Lorem ipsum dolor sit amet, 
-          consectetur undo thes<br> tabore et dolore magna aliqua.</span>
+          consectetur undo thes tabore et dolore magna aliqua.</span>
         <span class="s-text-item">20 May 2020</span>
       </div>
     </div>
@@ -236,18 +247,18 @@
     <span class="common__subheader s-text fonts">
       Lorem ipsum dolor sit amet, 
       consectetur adipiscing elit, 
-      sed do eiusmod tempor incididunt <br> 
+      sed do eiusmod tempor incididunt  
       ut labore et dolore magna aliqua.
     </span>
   </div>
 
-  <article class="row-container">
+  <article class="contacts__big-container row-container">
     
-  <div class="article__list">
+  <div class="contacts__container article__list">
       
     <span class="contacts__header">Send Us Message.</span>
 
-    <div class="contacts__form s-text-item">
+    <div class="contacts__form-container s-text-item">
       <form id="contacts-form" action="/action_page.php">
         <div>
           <label for="fName">Name</label>
@@ -276,41 +287,62 @@
 
   </article>
 
-<div class="contacts__icons">
-  <div><img src="img/contact-adress-spic.png" alt="adress"></div>
-  <div><img src="img/contact-phone-spic.png" alt="phone number"></div>
-  <div><img src="img/contact-mail-spic.png" alt="mint-email adress"></div>
-</div>
+<div class="banner__contacts-icons-container">
+  <div class="banner__contacts__icons">
+    
+    <div>
+      <div class="banner__contact-item">
+        <img src="img/contact-adress-spic.png">
+        <div style="visibility: visible; opacity: 1;">
+          1211 Awesome Avenue, <br>NY USD
+        </div>
+      </div>
 
-<div class="contacts__info">
-  <div class="contact_item" style="visibility: visible; opacity: 1;">
-    1211 Awesome Avenue, <br>NY USD</div>
-  <div class="contact_item" style="visibility: visible; opacity: 1;">
-    +00 123 - 456 - 78 <br>+00 123 - 456 - 78</div>
-  <div class="contact_item" style="visibility: visible; opacity: 1;">
-    mint@mintmail.com</div>  
-</div>
+      <div class="social-net__icon"><a href="https://www.facebook.com/"><img src="img/social-network-f.png"></a></div>
+    </div>
+    
+    <div>
+      <div class="banner__contact-item">
+        <img src="img/contact-phone-spic.png" alt="phone number">
+        <div style="visibility: visible; opacity: 1;">
+          1211 Awesome Avenue, <br>NY USD
+        </div>
+      </div>
 
+      <div class="social-net__icon"><a href="https://twitter.com/"><img src="img/social-network-tw.png"></a></div>
+    </div>
+  
+    <div>
+      <div class="banner__contact-item"><img src="img/contact-mail-spic.png" alt="mint-email adress">
+        <div style="visibility: visible; opacity: 1;">
+          mint@mintmail.com
+        </div>
+      </div>
 
-
-<div class="social-net__icons">
-  <div><a href="https://www.facebook.com/"><img src="img/social-network-f.png" alt="partner1"></a></div>
-  <div><a href="https://twitter.com/"><img src="img/social-network-tw.png" alt="partner2"></a></div>
-  <div><a href="https://dribbble.com/"><img src="img/social-network-dribble.png" alt="partner3"></a></div>
+      <div class="social-net__icon"><a href="https://dribbble.com/"><img src="img/social-network-dribble.png"></a></div>
+    </div>
+  
+  </div>
 </div>
 
 </section>
 
 </main>
 
+</div>
+
 <!-- FOOTER BAR -->
 <footer>   
   <div class="footer-bar row-container">
-      <div class="footer__logo"><img src="img/footer-logo.png" alt="logo"></div>
+    <div class="footer__logo"><img src="img/footer-logo.png" alt="logo"></div>
+    <div class="footer-items">  
       <div> © 2020 - Mint,All Right Reserved</div>
       <div class="footer__anchor"><a href="#"><div>BACK TO TOP <img src="img/footer-arrow.png"></div></a></div>
+    </div>
   </div>
 <footer> 
+
+
 
     <script src="js/index.js"></script>
   </body>
