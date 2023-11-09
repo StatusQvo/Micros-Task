@@ -9,4 +9,4 @@ admin
 
 2223337
 
-![https://beget.com/!](/img/Beget-logo.png)
+[![Beget](/img/Beget-logo.png)](https://beget.com/)
