@@ -1,16 +1,16 @@
 class imageSizeAndAction{
-  constructor (classElt){
-    this.classElttoAdd = this.getClassSize(classElt);
+  constructor (imageClass){
+    this.Ssize = "work__image_hover";
+    this.Lsize = "work__image-l_hover";
+    this.class = String(imageClass);
   }
 
-  getClassSize(classElt) {
-     
-    let lL = classElt[classElt.length-1]
-   
+  getClassSize() {
+    let lL = this.class[this.class.length-1]
     if(lL === "s"){
-      return "work__image_hover"
+      return this.Ssize
     } else {
-      return "work__image-l_hover"
+      return this.Lsize
     }
   }
 
@@ -21,76 +21,114 @@ class imageSizeAndAction{
 const startFunc = ()=>{
  // DOM elements
  const workPicContainer = document.querySelector('.work-pictures');
- workPicContainer.addEventListener("mouseover", (event) => {
- workSectionEvent(workPicContainer,event);
-});
- workPicContainer.addEventListener("mouseout", (event) => {
- workSectionEventOut(workPicContainer,event);
-});
-
-}
-
-function deleteClass(workPicContainer,dataID) {
-  
-  $pictureDOM = workPicContainer.querySelector(`.work__container-img[data-id="${dataID}"]`)
-  $pictureDOMSub = $pictureDOM.children[0].classList
-
-  if($pictureDOMSub.length){
-      let classListArr = Array.prototype.slice.call($pictureDOMSub);
-      $pictureDOM.children[0].classList.remove(...classListArr )
-  }
-} 
-
-
-
-function workSectionEvent(workPicContainer,event) {
-  const { target } = event;
-  let classNeedAdd = null;
-  let dataID = null;
-   
-if (target.children.length){
-  
-   
-   ClassArr = Array.prototype.slice.call(target.classList)
-  
-    if(ClassArr.includes('work__container-img')){
-       classInDivArr = Array.prototype.slice(target.children.classList);
-      
-      dataID = "" + target.dataset.id
-      classObj = new imageSizeAndAction(ClassArr[1]);
-      classNeedAdd = classObj.classElttoAdd;
-      
-     
-      $pictureDOM = workPicContainer.querySelector(`.work__container-img[data-id="${dataID}"]`)
-      $pictureDOMSub = $pictureDOM.children[0].classList.add(classNeedAdd);
-      
-      event.stopPropogation();
-    } 
-      
-   //target.children[0].classList.add(classNeedAdd)
-   //$pictureDOMSub.removeEventListener();
-  } else {
-
-  }
- }
-
-
-function workSectionEventOut(workPicContainer,event) {
-  const { target } = event;
-  let classNeedAdd = null;
-  let dataID = null;
-   
-  
-  if (target.classList.length){
-  
-    let ClassArr = Array.prototype.slice.call(target.classList)
-  
-    if(ClassArr.includes('work__container-img')){
-        // find data-id
-        dataID = "" + target.dataset.id
-        deleteClass(workPicContainer,dataID)
-    }
-  }
+ const blogPicContainer = document.querySelector('.blog__container');
+  workSectionEvent(workPicContainer);
+  blogSectionEvent(blogPicContainer);
 }
 
 startFunc()
+
+function workSectionEvent(workPicContainer) {
+  const imagesContainer = workPicContainer.querySelectorAll('.work__container-img')
+
+  imagesContainer.forEach(imgElt => {
+    imgElt.addEventListener("mouseover", (event) => {
+      const { target } = event;
+      EventHoverIn(imgElt,workPicContainer)
+     }); 
+  })
+
+  imagesContainer.forEach(imgElt => {
+    imgElt.addEventListener("mouseout", (event) => {
+      const { target } = event;
+      EventHoverOut(imgElt,workPicContainer)
+     }); 
+  })
+
+  workPicContainer.addEventListener("mousedown", (event) => {
+    const { target } = event;
+    const NeededClickClass = 'work__image_click'; 
+    $hoverToClickElt = workPicContainer.querySelector(`.work__image_hover`) ?? workPicContainer.querySelector(`.work__image-l_hover`) 
+    if(target === $hoverToClickElt){
+        $hoverToClickElt.classList.add(NeededClickClass);
+      }
+  })
+   
+  workPicContainer.addEventListener("mouseup", (event) => {
+    const { target } = event;
+    const NeededClickClass = 'work__image_click'; 
+    $hoverToClickElt = workPicContainer.querySelector(`.work__image_hover`) ?? workPicContainer.querySelector(`.work__image-l_hover`) 
+    if(target === $hoverToClickElt){
+        $hoverToClickElt.classList.remove(NeededClickClass);
+    }
+  })
+}
+
+function EventHoverIn(imgElt,workPicContainer){
+  dataID          = "" + imgElt.dataset.id
+
+  imgClassArr  = Array.prototype.slice.call(imgElt.classList)
+  ClassObj    = new imageSizeAndAction(imgClassArr[1]);
+  NeededClass = ClassObj.getClassSize();
+  
+  $pictureDOM = workPicContainer.querySelector(`.work__container-img[data-id="${dataID}"]`)
+  $pictureDOM.children[0].classList.add(NeededClass);
+}
+
+function EventHoverOut(imgElt,workPicContainer){
+  dataID          = "" + imgElt.dataset.id
+
+  imgClassArr  = Array.prototype.slice.call(imgElt.classList)
+  ClassObj    = new imageSizeAndAction(imgClassArr[1]);
+  NeededClass = ClassObj.getClassSize();
+  
+  $pictureDOM = workPicContainer.querySelector(`.work__container-img[data-id="${dataID}"]`)
+  $pictureDOM.children[0].classList.remove(NeededClass);
+}
+
+
+function blogSectionEvent(blogPicContainer){
+  const blogImagesContainer = blogPicContainer.querySelectorAll('.blog__container-img')
+  const NeededClass = 'blog__image_hover';
+
+  blogImagesContainer.forEach(imgElt => {
+    imgElt.addEventListener("mouseenter", (event) => {
+      const { target } = event;
+      if(target === imgElt){
+        target.children[0].classList.add(NeededClass);
+      }
+    })
+  }); 
+
+  blogImagesContainer.forEach(imgElt => {
+    imgElt.addEventListener("mouseleave", (event) => {
+      const { target } = event;
+      if(target === imgElt){
+            target.children[0].classList.remove(NeededClass);
+       }
+    });   
+  })
+
+  
+  blogPicContainer.addEventListener("mousedown", (event) => {
+    const { target } = event;
+    const NeededClickClass = 'work__image_click'; 
+    $hoverToClickElt = blogPicContainer.querySelector(`.blog__image_hover`) ?? workPicContainer.querySelector(`.work__image-l_hover`) 
+    if(target === $hoverToClickElt){
+        $hoverToClickElt.classList.add(NeededClickClass);
+      }
+  })
+   
+  blogPicContainer.addEventListener("mouseup", (event) => {
+    const { target } = event;
+    const NeededClickClass = 'work__image_click'; 
+    $hoverToClickElt = blogPicContainer.querySelector(`.blog__image_hover`) ?? workPicContainer.querySelector(`.work__image-l_hover`) 
+    if(target === $hoverToClickElt){
+        $hoverToClickElt.classList.remove(NeededClickClass);
+    }
+  })
+}
+
+
+
+
