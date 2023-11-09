@@ -323,14 +323,6 @@ margin-bottom: 195px;
   width: 50%;
 }
 
-.about__img1{
-background-image: url('img/about-us-person1.png');
-}
-
-.about__img2{
-  background-image: url('img/about-us-person2.png');
-}
-
 .about__img_common{
   position: relative;
   width: 280px;
