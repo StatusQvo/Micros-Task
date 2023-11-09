@@ -9,4 +9,4 @@ admin
 
 2223337
 
-![beget hosting!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
+![beget hosting!](/assets/img/Beget-logo.png)
