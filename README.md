@@ -9,4 +9,4 @@ admin
 
 2223337
 
-![beget hosting!](/assets/img/Beget-logo.png)
+![beget hosting!](/img/Beget-logo.png)
