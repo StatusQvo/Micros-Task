@@ -6,4 +6,7 @@ Project Portfolio for Micros.
 
 ### Данные для входа
 admin
+
 2223337
+
+![beget hosting!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
